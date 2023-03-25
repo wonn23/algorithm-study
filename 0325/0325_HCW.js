@@ -109,11 +109,12 @@ async function add(a, b) {
 //3. `calc()`함수는 `add()` 함수를 비동기처리해서 실행합니다. `await`을 사용해서 2초 후에 두 숫자의 합을 화면에 띄우세요.
 async function calc() {
   const sum = await add(1, 2);
-  await wait(2000);
   document.body.append("before wait");
   document.body.append(document.createElement("br"));
+  await wait(2000);
   document.body.append("after wait");
   document.body.append(document.createElement("br"));
+  await wait(2000);
   document.body.append(`The sum is ${sum}`);
 }
 
