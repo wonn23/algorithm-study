@@ -83,7 +83,7 @@ def eating(data):
         #print(Table)
 
         
-    # 음식 선호도의 최댓값을 반환해 주세요. 뭔소리야..
+    # 음식 선호도의 최댓값을 반환해 주세요. 
     return sum(Meal)
 
 def main():
