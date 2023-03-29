@@ -45,14 +45,14 @@ find = 'pPAp'
 
 n = int(input())
 str1 = input()
-count = 0
-str3 = list(str1)
+str2 = list(str1) #문자열 -> 리스트 (아래에서 문자 바꾸는 거 하려고..)
 
-for i in range(n) :
-    str2 = str3[i:i+4]
+count = 0
+
+for i in range(n) : 
     
-    if find == ''.join(str2):
-        count+=1
-        str3[i+3] = 'o'
+    if find == ''.join(str2[i:i+4]): #네 글자씩 쪼개서 문자열로 합치기
+        count += 1
+        str2[i+3] = 'o' #겹치는 걸 방지하기 위해서 pPAp의 마지막 글자를 상관없는 o로 바꿔버림
 
 print(count)
