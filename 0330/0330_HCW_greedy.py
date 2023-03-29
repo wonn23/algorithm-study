@@ -35,4 +35,4 @@ print(result)
 
 num = int(input())
 string = input()
-print(string.split('pPAp'))
+print(string.count('pPAp'))
