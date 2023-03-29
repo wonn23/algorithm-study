@@ -35,5 +35,4 @@ print(result)
 
 num = int(input())
 string = input()
-max_num = string.split('pPAp')
-print(len(max_num)-1)
+print(string.split('pPAp'))
