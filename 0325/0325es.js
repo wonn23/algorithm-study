@@ -22,6 +22,7 @@ const slowCounter = () => {
   }, 3000);
 };
 
+
 btn.addEventListener("click", slowCounter);
 
 
