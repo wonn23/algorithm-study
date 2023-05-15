@@ -54,19 +54,19 @@ def solution(bridge_length, weight, truck_weights):
     answer = 0
     wait_truck = deque(truck_weights)
     bridge = deque([0 for _ in range(bridge_length)])
+    bridge_weight = 0
     
-    while True:
+    while len(bridge):
         answer += 1
-        bridge.popleft() # 다리 위에 있는 차량을 먼저 지나게 하고 무게를 계산해야함
-        if sum(bridge) + wait_truck[0] <= weight: # 차량이 다리 위에 올라갈 수 있는지 확인하기 
-            truck = wait_truck.popleft() # 대기 중인 트럭 한대 뽑아내기
-            wait_truck.append(0) # 대기 중인 차량 큐에서 뽑아 낼 트럭이 없을 때, 오류 방지를 위해 0 추가
-            bridge.append(truck) # 다리에 트럭 올림
-        else:
-            bridge.append(0)
-        if not sum(bridge):
-            break
-    
+        bridge_weight -= bridge[0] # 차량 뽑아내기 전 다리 무게 계산하기
+        bridge.popleft() # 다리 위에 있는 차량을 뽑아내기
+        if wait_truck:
+            if bridge_weight + wait_truck[0] <= weight: # 차량이 다리 위에 올라갈 수 있는지 확인하기 
+                truck = wait_truck.popleft() # 대기 중인 트럭 한대 뽑아내기
+                bridge_weight += truck # 트럭 무게 다리에 더해주기
+                bridge.append(truck) # 다리에 트럭 올림
+            else:
+                bridge.append(0)
     return answer
 
 # 주식가격
