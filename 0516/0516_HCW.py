@@ -49,4 +49,24 @@ def solution(progresses, speeds):
 
 # 다리를 지나는 트럭
 
+from collections import deque
+def solution(bridge_length, weight, truck_weights):
+    answer = 0
+    wait_truck = deque(truck_weights)
+    bridge = deque([0 for _ in range(bridge_length)])
+    
+    while True:
+        answer += 1
+        bridge.popleft() # 다리 위에 있는 차량을 먼저 지나게 하고 무게를 계산해야함
+        if sum(bridge) + wait_truck[0] <= weight: # 차량이 다리 위에 올라갈 수 있는지 확인하기 
+            truck = wait_truck.popleft() # 대기 중인 트럭 한대 뽑아내기
+            wait_truck.append(0) # 대기 중인 차량 큐에서 뽑아 낼 트럭이 없을 때, 오류 방지를 위해 0 추가
+            bridge.append(truck) # 다리에 트럭 올림
+        else:
+            bridge.append(0)
+        if not sum(bridge):
+            break
+    
+    return answer
+
 # 주식가격
