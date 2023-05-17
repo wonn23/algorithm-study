@@ -71,6 +71,7 @@ def solution(citations):
     citations.sort(reverse = True)
     n = len(citations)
     for i in range(n):
-        if citations[i] >= i+1 :
-            answer = i+1
+        if citations[i] < i+1 :
+            break
+        answer+=1
     return answer
