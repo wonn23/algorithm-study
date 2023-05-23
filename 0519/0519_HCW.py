@@ -14,6 +14,8 @@ def solution(array, commands):
 def solution(numbers):
     numbers = list(map(str, numbers))
     numbers.sort(key=lambda x: x * 3, reverse=True)
+    # [9, 5, 34, 3, 30 ] 1000미만
+    # 999 555 343434 333 303030
 
     return str(int("".join(numbers)))  # 이 문제는 너무 어렵다
 
@@ -23,7 +25,6 @@ def solution(numbers):
 
 def solution(citations):
     answer = 0
-    result = []
     citations.sort()
     n = len(citations)
     for i in range(n):
