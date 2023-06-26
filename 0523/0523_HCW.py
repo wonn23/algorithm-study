@@ -71,7 +71,6 @@ def solution(numbers):
     num = list(numbers)
     prime_set = set()
     for i in range(1, len(num) + 1):
-        result = ""
         a = list(itertools.permutations(num, i))
         for j in a:
             # 튜플 안의 문자열을 합치기
@@ -80,7 +79,6 @@ def solution(numbers):
             number = int(combined)
             if is_prime_num(number):
                 prime_set.add(number)
-        print(prime_set)
     answer = len(prime_set)
     return answer
 
