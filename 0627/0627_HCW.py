@@ -34,7 +34,7 @@ def solution(name):
     def solution(name):
         answer = 0
         # 상하로 움직인 수 모두 더하기
-        num_list = [min(ord(i) - ord("A"), ord("Z") - ord(n) + 1) for i in name]
+        num_list = [min(ord(i) - ord("A"), ord("Z") - ord(i) + 1) for i in name]
         answer += sum(num_list)
 
         min_move = len(name) - 1
