@@ -1,5 +1,5 @@
 def solution(n, computers):
-    def dfs(x):  # Modified to only accept x as parameter
+    def dfs(x):  # 왜 2차원이 아니라 1차원으로 풀 수 있는걸까?
         stack = []
         stack.append(x)
         while stack:
