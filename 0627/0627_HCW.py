@@ -45,6 +45,9 @@ def solution(name):
             while next_i < len(name) and name[next_i] == "A":
                 next_i += 1
             # 각 문자부터 'A..'문자가 있을경우 몇번씩 조이스틱쓰는지 체크
+            print(
+                i,
+            )
             min_move = min(
                 min_move, 2 * i + len(name) - next_i, 2 * (len(name) - next_i) + i
             )
