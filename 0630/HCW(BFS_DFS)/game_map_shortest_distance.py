@@ -14,6 +14,7 @@ def solution(maps):
     q = deque()
     x, y, distance = 0, 0, 1  # x,y 위치와 제자리인 것 세줘야해서 1이다
     q.append([x, y, distance])
+    visited[x][y] = True
 
     while q:
         x, y, distance = q.popleft()
